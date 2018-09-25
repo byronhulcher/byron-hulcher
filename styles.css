@@ -1,0 +1,235 @@
+* {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  background-color: pink;
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+  color: black;
+}
+
+a:hover,
+a:focus {
+  color: darkgray; /* why is dark gray lighter than gray? */
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  border-bottom: 1px solid black;
+  margin: 0 0 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0; 
+}
+
+.center-column {
+  background-color: white;
+  background-clip: padding-box;
+  max-width: 840px;
+  margin: auto;
+  padding: 0 20px 20px;
+  position: relative;
+  width: calc(100% - 39px); /* this is a hack that fixes an issue that I can only get to appear in Chrome's Device mode in Dev Tools but it annoyed me so lol */
+}
+
+@media screen and (min-width: 940px) {
+  .center-column {
+    border-right: 20px solid rgba(0,0,0,0.25);
+  }
+}
+
+/* .center-column:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    border-width: 0 20px 20px 0;
+    border-style: solid;
+    border-color: rgba(255,255,255,.1) rgba(255,255,255,.1) rgba(0,0,0,0) rgba(0,0,0,0);
+} */
+
+.section {
+  padding-bottom: 20px; 
+}
+
+.personal-info {
+  align-items: start;
+  background-color: white;
+  box-shadow: 0px 15px 20px -15px #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -30px;
+  padding: 20px 30px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+  .personal-info {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .personal-info {
+    position: static;
+    box-shadow: none;
+    margin: 0;
+    padding: 20px 0;
+  }
+}
+
+.personal-info > * {
+  width: 100%;
+}
+
+.personal-info h1{
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 400px) {
+  .personal-info h1{
+    margin-bottom: 0;
+  }
+}
+
+.contact-info .column {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 400px) {
+  .contact-info .column > * {
+    text-align: right;
+  }
+}
+
+.personal-info .name {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+@media screen and (min-width: 400px) {
+  .personal-info .name {
+    font-size: 48px;
+  }
+}
+
+.personal-info .contact-info {
+  display: none;
+}
+
+.section.contact-info {
+  display: flex;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 720px) {
+  .personal-info .contact-info {
+    display: flex;
+  }
+
+  .section.contact-info {
+    display: none;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 720px) {
+  .contact-info {
+    flex-direction: column;
+  }
+}
+
+.contact-info .email,
+.contact-info .github {
+  font-weight: bold;
+}
+
+.skills .interests {
+  margin: 0 0 10px 20px;
+}
+
+.experience .job {
+   margin-bottom: 10px;
+}
+
+.experience .job .info {
+  margin-bottom: 4px;
+}
+
+@media only screen and (min-width: 720px) {
+  .experience .job .info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
+
+.experience .job .info > * {
+  line-height: 28px;
+  margin-right: 4px;
+}
+
+.experience .job .info > *:last-child {
+  margin-right: 0;
+}
+
+/* love too float */
+.experience .job .info .employer {
+  display: inline;
+}
+
+.experience .job .info .date-range {
+  display: block;
+}
+
+@media print {
+  body {
+    background-color: initial;
+  }
+  
+  .center-column {
+    max-width: none;
+  }
+}
